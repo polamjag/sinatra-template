@@ -2,7 +2,10 @@
 
 ## setup
 
+run
+
 ```
-gem install bundler
-bundle install --path vendor/bundle
+./setup
 ```
+
+this command initializes README and license of template repo and installs gem dependencies
