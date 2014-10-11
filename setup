@@ -12,12 +12,11 @@ case $answer in
     ;;
 esac
 
-rm README.md LICENSE clean
+rm README.md LICENSE setup
 rm -rf .git/
-git remote rm origin
-echo -n "input new git remote origin: "
-read newremote
-git remote add origin $newremote
 
 gem install bundler
 bundle install --path vendor/bundle
+
+echo 'now git repo is not initialized!'
+echo 'run git init to initialize'
