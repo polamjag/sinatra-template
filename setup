@@ -1,0 +1,23 @@
+#!/bin/sh
+
+echo "cleaning `pwd` ..."
+echo -n "type [OK] to confirm: "
+read answer
+case $answer in
+  OK)
+    ;;
+  *)
+    echo 'abort'
+    exit 2
+    ;;
+esac
+
+rm README.md LICENSE clean
+rm -rf .git/
+git remote rm origin
+echo -n "input new git remote origin: "
+read newremote
+git remote add origin $newremote
+
+gem install bundler
+bundle install --path vendor/bundle
