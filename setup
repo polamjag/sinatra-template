@@ -12,10 +12,13 @@ case $answer in
     ;;
 esac
 
+echo "exec: removing needless files ..."
 rm README.md LICENSE setup
 rm -rf .git/
 
+echo "exec: gem install bundler"
 gem install bundler
+echo "exec: bundle install --path vendor/bundle"
 bundle install --path vendor/bundle
 
 echo 'now git repo is not initialized!'
